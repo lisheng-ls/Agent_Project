@@ -1,0 +1,26 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="qdrant-client" />
+          <option value="asyncio" />
+          <option value="asyncmy" />
+          <option value="cryptography" />
+          <option value="elasticsearch" />
+          <option value="fastapi" />
+          <option value="jieba" />
+          <option value="langchain" />
+          <option value="langchain-huggingface" />
+          <option value="langgraph" />
+          <option value="loguru" />
+          <option value="omegaconf" />
+          <option value="optional" />
+          <option value="sqlalchemy" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="SqlNoDataSourceInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+  </profile>
+</component>
