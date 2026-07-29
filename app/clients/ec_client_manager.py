@@ -4,7 +4,7 @@ from typing import Optional
 
 from elasticsearch import AsyncElasticsearch
 
-from app.conf.app_config import EsConfig, load_app_config
+from app.conf.app_config import EsConfig, app_config
 
 
 class EsClientManager:
@@ -31,7 +31,7 @@ class EsClientManager:
         await self.client.close()
 
 
-es_config = load_app_config().es
+es_config = app_config.es
 es_client_manager = EsClientManager(es_config)
 
 if __name__ == '__main__':

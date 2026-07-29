@@ -2,12 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e281db8-106f-4d1a-9dbc-b5384523cd5c" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/column_info_mapper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/column_metric_mapper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/metric_info_mapper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/qdrant/column_qdrant_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Agent_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Agent_Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/mysql/dw/dw_mysql_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/mysql/dw/dw_mysql_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/clients/ec_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/ec_client_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/clients/embedding_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/embedding_client_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/clients/mysql_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/mysql_client_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/clients/qdrant_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/qdrant_client_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/conf/app_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/conf/app_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/entities/column_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/entities/column_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/entities/metric_Info.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/entities/metric_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/entities/table_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/entities/table_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/table_info_mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/table_info_mapper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/repositories/mysql/meta/meta_mysql_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/meta_mysql_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/scripts/build_meta_knowledge.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/build_meta_knowledge.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/meta_knowledge_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/meta_knowledge_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +42,12 @@
     &quot;assignee&quot;: &quot;lisheng-ls&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/lisheng-ls/Agent_Project.git&quot;,
-    &quot;accountId&quot;: &quot;9165e463-4bc7-45c0-ada3-b1a0bd7877ca&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/lisheng-ls/Agent_Project.git",
+    "accountId": "7315528a-a12c-4a1f-8624-20e3bf892138"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -48,22 +60,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.build_meta_knowledge.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/学习项目/Agent_Project&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.build_meta_knowledge.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/学习项目/Agent_Project",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="build_meta_knowledge" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Agent_Project" />

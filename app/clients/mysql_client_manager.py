@@ -7,7 +7,9 @@ from typing import Optional
 
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncEngine, async_sessionmaker,create_async_engine
-from app.conf.app_config import DbConfig, load_app_config
+
+
+from app.conf.app_config import DbConfig, app_config
 
 
 class MysqlClientManager:
@@ -46,7 +48,6 @@ class MysqlClientManager:
     async def close(self):
         await self.engine.dispose()
 
-app_config = load_app_config()
 
 #db_meta数据库客户端
 db_meta_client_manager = MysqlClientManager(app_config.db_meta)

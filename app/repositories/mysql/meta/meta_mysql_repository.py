@@ -1,12 +1,23 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.repositories.mysql.meta.mappers.column_info_mapper import ColumnInfoMapper
+from app.repositories.mysql.meta.mappers.table_info_mapper import TableInfoMapper
+
 
 class MetaMysqlRepository:
     def __init__(self,session:AsyncSession):
         self.session = session
 
 
-    #将数据写入数据库中
-    def save_table_info(self,list_info):
-        self.session.add_all(list_info)
+    #将表信息写入table_info表中
+    def save_table_info(self,table_infos):
 
+        table_info = [TableInfoMapper().to_model(table_info) for table_info in table_infos  ]
+
+        self.session.add_all(table_info)
+
+
+    #将字段信息写入column_info表中
+    def save_column_info(self,column_infos):
+        column_info = [ColumnInfoMapper().to_model(column_info) for column_info in column_infos  ]
+        self.session.add_all(column_info)

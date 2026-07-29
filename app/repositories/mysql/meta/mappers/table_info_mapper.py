@@ -18,5 +18,8 @@ class TableInfoMapper:
     @staticmethod
     def to_model(table_info : TableInfo)-> TableInfoMySQL :
         return TableInfoMySQL(
-            
+            id = table_info.id,
+            name = table_info.name,
+            role = table_info.role,
+            description = table_info.description
         )

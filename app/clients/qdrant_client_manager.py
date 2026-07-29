@@ -5,7 +5,7 @@ import asyncio
 from typing import Optional
 
 from qdrant_client import  AsyncQdrantClient
-from app.conf.app_config import QdrantConfig, load_app_config
+from app.conf.app_config import QdrantConfig, app_config
 from qdrant_client.models import PointStruct
 from qdrant_client.models import Distance, VectorParams
 
@@ -20,7 +20,7 @@ class QdrantClientManager:
 
 
     def create_client(self):
-        self.client = AsyncQdrantClient(url=self.qdrant_url())
+        self.client = AsyncQdrantClient(url=self.qdrant_url(),check_compatibility=False)
         return self.client
 
     @property
@@ -30,13 +30,13 @@ class QdrantClientManager:
             self.create_client()
         return self.init_client
 
-    async def close_client(self):
+    async def close(self):
         """关闭连接释放资源"""
         if self.client is not None:
             await self.client.close()
 
 
-config = load_app_config().qdrant
+config = app_config.qdrant
 qdrant_client_manager = QdrantClientManager(config)
 
 

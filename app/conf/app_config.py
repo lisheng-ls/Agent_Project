@@ -66,25 +66,24 @@ class AppConfig:
     llm:LlmConfig
 
 
-def load_app_config():
-    #__file__获取当前文件的绝对路径
-    #Path(__file__).parent：获取当前文件的上一级目录的绝对路径
-    #Path(__file__).parents[n]: 获取当前文件的上n级目录的绝对路径
+#__file__获取当前文件的绝对路径
+#Path(__file__).parent：获取当前文件的上一级目录的绝对路径
+#Path(__file__).parents[n]: 获取当前文件的上n级目录的绝对路径
 
-    #获取yaml文件的路径
-    config_path = Path(__file__).parents[2]/'conf'/'app_config.yaml'
+#获取yaml文件的路径
+config_path = Path(__file__).parents[2]/'conf'/'app_config.yaml'
 
-    #读取yaml文件内容
-    content = OmegaConf.load(config_path)
+#读取yaml文件内容
+content = OmegaConf.load(config_path)
 
-    #构造配置文件结构，按照AppConfig结构构造
-    schema = OmegaConf.structured(AppConfig)
+#构造配置文件结构，按照AppConfig结构构造
+schema = OmegaConf.structured(AppConfig)
 
-    # 合并结构+内容
-    merge_config = OmegaConf.merge(schema,content)
+# 合并结构+内容
+merge_config = OmegaConf.merge(schema,content)
 
-    # 转换为AppConfig的对象
-    app_config: AppConfig = OmegaConf.to_object(merge_config)
+# 转换为AppConfig的对象
+app_config: AppConfig = OmegaConf.to_object(merge_config)
 
-    return app_config
+
 

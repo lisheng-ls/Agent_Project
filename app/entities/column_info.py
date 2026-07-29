@@ -5,11 +5,12 @@ from typing import Any
 @dataclass
 class ColumnInfo:
     id :str
-    name :str
-    type: str
-    role :str
+    name :str | None
+    type :str | None
+    type: str  | None
+    role :str | None
     examples :list[Any]
-    description :str
+    description :str | None
     alias :list[str]
-    table_id :str
+    table_id :str | None
 

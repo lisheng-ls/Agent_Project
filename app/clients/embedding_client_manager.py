@@ -1,7 +1,7 @@
 import asyncio
 from langchain_huggingface.embeddings import HuggingFaceEndpointEmbeddings
 
-from app.conf.app_config import EmbeddingConfig, load_app_config
+from app.conf.app_config import EmbeddingConfig, app_config
 
 """
 
@@ -26,7 +26,7 @@ class EmbeddingClientManager:
         return self.client
 
 
-embedding_config = load_app_config().embedding
+embedding_config = app_config.embedding
 embedding_client_manager = EmbeddingClientManager(embedding_config)
 
 if __name__ == '__main__':
