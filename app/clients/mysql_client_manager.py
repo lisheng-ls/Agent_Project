@@ -43,7 +43,7 @@ class MysqlClientManager:
         )
         return self.session_factory
 
-    async def mysql_close(self):
+    async def close(self):
         await self.engine.dispose()
 
 app_config = load_app_config()
@@ -63,12 +63,16 @@ if __name__ == '__main__':
     print('客户端初始化成功')
     async def test():
        async  with db_dw_client_manager.session_factory()  as session :
-            sql = "select * from fact_order limit 10"
+            sql = "select customer_id from dim_customer limit 10"
+            #sql = "show columns from dim_customer"
             result = await session.execute(text(sql))
             rows = result.fetchall()
-
             print(rows)
-            await db_dw_client_manager.mysql_close()
+            # dist = {row['Field']:row['Type'] for row in rows}
+            # print(dist)
+            list = [row[0] for row in rows]
+            print(list)
+            await db_dw_client_manager.close()
 
     asyncio.run(test())
 

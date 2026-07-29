@@ -5,9 +5,8 @@ class MetaMysqlRepository:
     def __init__(self,session:AsyncSession):
         self.session = session
 
-    def save_table_infos(self, table_info_list):
-        self.session.add_all(table_info_list)
 
-    def save_column_infos(self, column_info_list):
-        self.session.add_all(column_info_list)
+    #将数据写入数据库中
+    def save_table_info(self,list_info):
+        self.session.add_all(list_info)
 
