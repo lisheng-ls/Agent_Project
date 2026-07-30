@@ -2,9 +2,8 @@ from app.entities.metric_info import MetricInfo
 from app.models.metric_info import MetricInfoMySQL
 
 
-class MetricInfo:
+class MetricInfoMapper:
     #将orm实体类转换为业务实体类，用于输出数据
-
     @staticmethod
     def to_entity(metric_info_mysql:MetricInfoMySQL) -> MetricInfo:
         # 归一化处理relevant_columns
@@ -33,6 +32,6 @@ class MetricInfo:
             id = metric_info.id,
             name = metric_info.name,
             description= metric_info.description,
-            relevant_columns = metric_info,
-            alias =metric_info
+            relevant_columns = metric_info.relevant_columns,
+            alias = metric_info.alias
         )

@@ -1,2 +1,12 @@
 2026-07-29 11:47:55.019 | INFO     | __main__:build:12 - 测试
 2026-07-29 14:39:45.000 | INFO     | __main__:build:12 - 测试
+2026-07-30 15:45:45.700 | INFO     | app.services.meta_knowledge_service:build:247 - 配置文件读取成功：
+2026-07-30 15:45:45.911 | INFO     | app.services.meta_knowledge_service:build:254 - 保存表信息和字段信息到meta数据库中成功
+2026-07-30 16:48:06.025 | INFO     | app.services.meta_knowledge_service:build:247 - 配置文件读取成功：
+2026-07-30 16:48:06.129 | INFO     | app.services.meta_knowledge_service:build:254 - 保存表信息和字段信息到meta数据库中成功
+2026-07-30 17:03:33.327 | INFO     | app.services.meta_knowledge_service:build:247 - 配置文件读取成功：
+2026-07-30 17:03:33.646 | INFO     | app.services.meta_knowledge_service:build:254 - 保存表信息和字段信息到meta数据库中成功
+2026-07-30 17:12:01.804 | INFO     | app.services.meta_knowledge_service:build:247 - 配置文件读取成功：
+2026-07-30 17:12:02.095 | INFO     | app.services.meta_knowledge_service:build:254 - 保存表信息和字段信息到meta数据库中成功
+2026-07-30 17:49:53.154 | INFO     | app.services.meta_knowledge_service:build:250 - 配置文件读取成功：
+2026-07-30 17:49:53.244 | INFO     | app.services.meta_knowledge_service:build:257 - 保存表信息和字段信息到meta数据库中成功

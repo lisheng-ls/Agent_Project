@@ -27,7 +27,7 @@ class EsClientManager:
         )
         return self.client
 
-    async def es_close(self):
+    async def close(self):
         await self.client.close()
 
 
@@ -83,6 +83,6 @@ if __name__ == '__main__':
         print('索引删除成功')
 
         #关闭客户端
-        await es_client_manager.es_close()
+        await es_client_manager.close()
 
     asyncio.run(test())

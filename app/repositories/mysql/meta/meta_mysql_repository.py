@@ -1,6 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.repositories.mysql.meta.mappers.column_info_mapper import ColumnInfoMapper
+from app.repositories.mysql.meta.mappers.metric_info_mapper import MetricInfoMapper
 from app.repositories.mysql.meta.mappers.table_info_mapper import TableInfoMapper
 
 
@@ -21,3 +22,8 @@ class MetaMysqlRepository:
     def save_column_info(self,column_infos):
         column_info = [ColumnInfoMapper().to_model(column_info) for column_info in column_infos  ]
         self.session.add_all(column_info)
+
+
+    def save_metric_info(self,metric_infos):
+        metric_info = [MetricInfoMapper().to_model(metric_info) for metric_info in metric_infos ]
+        self.session.add_all(metric_info)

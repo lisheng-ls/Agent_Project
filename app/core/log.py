@@ -3,7 +3,7 @@ from pathlib import Path
 
 from loguru import logger
 
-from app.conf.app_config import load_app_config
+from app.conf.app_config import app_config
 
 log_format = (
 "<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | "
@@ -13,7 +13,7 @@ log_format = (
 )
 
 logger.remove()
-app_config = load_app_config()
+
 if app_config.logging.console.enable:
     logger.add(sink=sys.stdout, level=app_config.logging.console.level, format=log_format)
 if app_config.logging.file.enable:

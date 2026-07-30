@@ -23,10 +23,10 @@ class ColumnQdrantRepository:
 
 
     #
-    async def upsert(self, embeddings:list[list[float]], ids:list[str] , payloads:list[dict],batch_size:int=20) -> None:
+    async def upsert(self, column_embeddings:list[list[float]], ids:list[str] , payloads:list[dict],batch_size:int=20) -> None:
 
         #zip返回迭代器
-        points:list[PointStruct]=[PointStruct(id=id,vector=embedding,payload=payload)for id,embedding,payload in zip(ids,embeddings,payloads)]
+        points:list[PointStruct]=[PointStruct(id=id,vector=column_embedding,payload=payload)for id,column_embedding,payload in zip(ids,column_embeddings,payloads)]
 
         #
         # points:list[PointStruct] = []

@@ -1,7 +1,8 @@
 import asyncio
-from langchain_huggingface.embeddings import HuggingFaceEndpointEmbeddings
+from typing import Optional
 
 from app.conf.app_config import EmbeddingConfig, app_config
+from langchain_openai import OpenAIEmbeddings
 
 """
 
@@ -9,21 +10,23 @@ embedding 客户端
 """
 class EmbeddingClientManager:
     def __init__(self,embedding_config : EmbeddingConfig):
-        self.client: HuggingFaceEndpointEmbeddings | None = None
+        self.client: Optional[OpenAIEmbeddings] | None = None
         self.embedding_config = embedding_config
 
     def _get_url(self):
         host = self.embedding_config.host
         port = self.embedding_config.port
-        print(f'http://{host}:{port}')
         return f'http://{host}:{port}'
 
 
     def create_embedding_client(self):
-        self.client = HuggingFaceEndpointEmbeddings(
-            model = self.embedding_config.model,
+
+        self.client = OpenAIEmbeddings(
+            model=self.embedding_config.model,
+            api_key='dummy',
+            base_url=f'{self._get_url()}/v1'
         )
-        return self.client
+
 
 
 embedding_config = app_config.embedding
@@ -37,15 +40,15 @@ if __name__ == '__main__':
     同步操作
     """
 
-    #单条数据转换为向量
-    text = "What is deep learning?"
-    query_result = client.embed_query(text)
-    print(f'单条数据转换为向量结果：{query_result}')
-
-    #多条数据转换为向量
-    texts=["What is deep learning?","What is  learning?"]
-    document_result = client.embed_documents(texts)
-    print(f'多条数据转换为向量结果：{document_result}')
+    # #单条数据转换为向量
+    # text = "What is deep learning?"
+    # query_result = client.embed_query(text)
+    # print(f'单条数据转换为向量结果：{query_result}')
+    #
+    # #多条数据转换为向量
+    # texts=["What is deep learning?","What is  learning?"]
+    # document_result = client.embed_documents(texts)
+    # print(f'多条数据转换为向量结果：{document_result}')
 
     """
     异步操作

@@ -53,6 +53,7 @@ if __name__ == '__main__':
                 collection_name='my_collection',
                 vectors_config= VectorParams(size=10, distance=Distance.COSINE),
             )
+
         #添加向量
         await client.upsert(
             collection_name="my_collection",

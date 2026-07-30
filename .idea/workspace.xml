@@ -2,24 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e281db8-106f-4d1a-9dbc-b5384523cd5c" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/column_info_mapper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/column_metric_mapper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/metric_info_mapper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/repositories/qdrant/column_qdrant_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/entities/value_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/es/value_es_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/repositories/qdrant/metric_qdrant_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/pytorch_model.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Agent_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Agent_Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/clients/ec_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/ec_client_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/clients/embedding_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/embedding_client_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/clients/mysql_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/mysql_client_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/clients/qdrant_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/qdrant_client_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/conf/app_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/conf/app_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/entities/column_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/entities/column_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/entities/metric_Info.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/entities/metric_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/entities/table_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/entities/table_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/table_info_mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/table_info_mapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/metric_info_mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/metric_info_mapper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/repositories/mysql/meta/meta_mysql_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/meta_mysql_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/qdrant/column_qdrant_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/qdrant/column_qdrant_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/scripts/build_meta_knowledge.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/build_meta_knowledge.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/meta_knowledge_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/meta_knowledge_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +42,12 @@
     &quot;assignee&quot;: &quot;lisheng-ls&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/lisheng-ls/Agent_Project.git",
-    "accountId": "7315528a-a12c-4a1f-8624-20e3bf892138"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lisheng-ls/Agent_Project.git&quot;,
+    &quot;accountId&quot;: &quot;9165e463-4bc7-45c0-ada3-b1a0bd7877ca&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -64,6 +64,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.build_meta_knowledge.executor": "Run",
+    "Python.embedding_client_manager.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -77,7 +78,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\学习项目\Agent_Project\app\repositories\qdrant" />
+      <recent name="D:\学习项目\Agent_Project\docker" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.embedding_client_manager">
     <configuration name="build_meta_knowledge" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Agent_Project" />
       <option name="ENV_FILES" value="" />
@@ -103,8 +110,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="embedding_client_manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Agent_Project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/clients" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/clients/embedding_client_manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.embedding_client_manager" />
         <item itemvalue="Python.build_meta_knowledge" />
       </list>
     </recent_temporary>
@@ -129,6 +162,8 @@
       <workItem from="1785119421980" duration="6000" />
       <workItem from="1785229879854" duration="198000" />
       <workItem from="1785293087235" duration="2698000" />
+      <workItem from="1785376154853" duration="19123000" />
+      <workItem from="1785401378231" duration="1874000" />
     </task>
     <servers />
   </component>
@@ -147,6 +182,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Agent_Project$embedding_client_manager.coverage" NAME="embedding_client_manager 覆盖结果" MODIFIED="1785402551197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/clients" />
     <SUITE FILE_PATH="coverage/Agent_Project$build_meta_knowledge.coverage" NAME="build_meta_knowledge 覆盖结果" MODIFIED="1785230065337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/scripts" />
   </component>
 </project>
