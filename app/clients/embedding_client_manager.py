@@ -1,11 +1,14 @@
 import asyncio
 from typing import Optional
 
-from app.conf.app_config import EmbeddingConfig, app_config
+import httpx
 from langchain_openai import OpenAIEmbeddings
 
-"""
+from app.conf.app_config import EmbeddingConfig, app_config
 
+
+
+"""
 embedding 客户端
 """
 class EmbeddingClientManager:
@@ -23,10 +26,12 @@ class EmbeddingClientManager:
 
         self.client = OpenAIEmbeddings(
             model=self.embedding_config.model,
-            api_key='dummy',
-            base_url=f'{self._get_url()}/v1'
+            api_key='unused',
+            base_url=self._get_url(),
+            check_embedding_ctx_length=False,
+            # 异步专用 AsyncClient（可选，控制超时）
+            http_async_client = httpx.AsyncClient(timeout=120.0)
         )
-
 
 
 embedding_config = app_config.embedding

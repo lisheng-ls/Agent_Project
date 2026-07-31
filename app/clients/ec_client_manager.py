@@ -22,7 +22,7 @@ class EsClientManager:
             hosts = [self.es_url()],
             verify_certs = False,
             ssl_show_warn = False,
-            request_timeout = 30,  # 延长请求超时，避免慢初始化被切断
+            request_timeout = 120,  # 延长请求超时，避免慢初始化被切断
             connections_per_node = 5  # 限制连接池，防止连接堆积被ES清理
         )
         return self.client
@@ -60,10 +60,10 @@ if __name__ == '__main__':
         }
     }
     async def test():
-        #添加索引
-        await client.indices.create(index=index_name,body=index_body)
-        print('索引添加成功')
-        #添加数据
+        # #添加索引
+        # await client.indices.create(index=index_name,body=index_body)
+        # print('索引添加成功')
+        # #添加数据
         doc = {
             "stu_id": "S001",
             "name": "张三",
@@ -78,9 +78,9 @@ if __name__ == '__main__':
         all_res =await client.search(index=index_name, query={"match_all": {}})
         print(all_res)
 
-        #删除索引
-        await client.indices.delete(index = ['student2','student','student1','student3','student4'])
-        print('索引删除成功')
+        # #删除索引
+        # await client.indices.delete(index = ['student2','student','student1','student3','student4'])
+        # print('索引删除成功')
 
         #关闭客户端
         await es_client_manager.close()

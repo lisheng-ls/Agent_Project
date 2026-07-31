@@ -3,6 +3,7 @@ from dataclasses import asdict
 from pathlib import Path
 
 from langchain_huggingface import HuggingFaceEndpointEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from omegaconf import OmegaConf
 
 
@@ -23,14 +24,14 @@ class MetaKnowledgeService:
                 meta_mysql_repository:MetaMysqlRepository,
                 dw_mysql_repository:DwMysqlRepository,
                 column_qdrant_repository:ColumnQdrantRepository,
-                embedding_client:HuggingFaceEndpointEmbeddings,
+                embedding_client:OpenAIEmbeddings,
                  value_es_repository:ValueEsRepository,
                  metric_qdrant_repository:MetricQdrantRepository):
 
         self.meta_mysql_repository:MetaMysqlRepository = meta_mysql_repository
         self.dw_mysql_repository:DwMysqlRepository = dw_mysql_repository
         self.column_qdrant_repository:ColumnQdrantRepository = column_qdrant_repository
-        self.embedding_client:HuggingFaceEndpointEmbeddings = embedding_client
+        self.embedding_client:OpenAIEmbeddings = embedding_client
         self.value_es_repository:ValueEsRepository = value_es_repository
         self.metric_qdrant_repository:MetricQdrantRepository = metric_qdrant_repository
 
@@ -225,7 +226,7 @@ class MetaKnowledgeService:
             batch_embedding = await self.embedding_client.aembed_documents(batch_embedding_text)
             metric_embeddings.extend(batch_embedding)
 
-        metric_ids = [metric_point['ids'] for metric_point in metric_points]
+        metric_ids = [metric_point['id'] for metric_point in metric_points]
         metric_payloads = [metric_point['payload'] for metric_point in metric_points]
         # 将数据存入向量数据库qdrant中
         await self.metric_qdrant_repository.upsert(metric_embeddings, metric_ids, metric_payloads)
@@ -275,4 +276,4 @@ class MetaKnowledgeService:
             #构建点
             #3.2.2添加向量
             await self._save_metric_info_to_qdrant(metric_infos)
-            logger.info('字段建立向量索引成功')
+            logger.info('指标建立向量索引成功')

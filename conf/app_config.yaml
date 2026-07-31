@@ -11,14 +11,14 @@ logging:
 
 db_meta:
   host: localhost
-  port: 3306
+  port: 3307
   user: atguigu
   password: Atguigu.123
   database: meta
 
 db_dw:
   host: localhost
-  port: 3306
+  port: 3307
   user: atguigu
   password: Atguigu.123
   database: dw
@@ -35,7 +35,7 @@ embedding:
 
 es:
   host: localhost
-  port: 9200
+  port: 9205
   index_name: data_agent
 
 llm:
