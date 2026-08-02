@@ -1,3 +1,4 @@
+from app.agent.state import TableInfoState
 from app.entities.table_info import TableInfo
 from app.models.table_info import TableInfoMySQL
 
@@ -23,3 +24,4 @@ class TableInfoMapper:
             role = table_info.role,
             description = table_info.description
         )
+

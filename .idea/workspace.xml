@@ -2,19 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e281db8-106f-4d1a-9dbc-b5384523cd5c" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Agent_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Agent_Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/agent/1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/agent/llm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/prompt/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/prompt/prompt_loader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prompts/correct_sql.prompt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prompts/extend_keywords_for_column_recall.prompt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prompts/extend_keywords_for_metric_recall.prompt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prompts/extend_keywords_for_value_recall.prompt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prompts/filter_metric_info.prompt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prompts/filter_table_info.prompt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prompts/generate_sql.prompt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/1_Pooling/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/1_Pooling/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/config_sentence_transformers.json" beforeDir="false" afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/config_sentence_transformers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/modules.json" beforeDir="false" afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/modules.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/sentence_bert_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/sentence_bert_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/special_tokens_map.json" beforeDir="false" afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/special_tokens_map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/tokenizer.json" beforeDir="false" afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/tokenizer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/tokenizer_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/tokenizer_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/vocab.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/embedding/bge-large-zh-v1.5/vocab.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agent/context.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/context.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agent/graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agent/nodes/add_extra_context.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/add_extra_context.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agent/nodes/extact_keywords.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/extact_keywords.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agent/nodes/merge_retrieved_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/merge_retrieved_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agent/nodes/recall_column.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/recall_column.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agent/nodes/recall_column_values.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/recall_column_values.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agent/nodes/recall_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/recall_metric.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agent/nodes/validate_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/validate_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agent/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/clients/ec_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/ec_client_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/clients/embedding_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/embedding_client_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/clients/mysql_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/mysql_client_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/clients/qdrant_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/qdrant_client_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/entities/table_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/entities/table_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/es/value_es_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/es/value_es_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/table_info_mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/table_info_mapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/mysql/meta/meta_mysql_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/meta_mysql_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/qdrant/column_qdrant_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/qdrant/column_qdrant_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/qdrant/metric_qdrant_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/qdrant/metric_qdrant_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/scripts/build_meta_knowledge.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/build_meta_knowledge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/app_config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/app_config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +60,12 @@
     &quot;assignee&quot;: &quot;lisheng-ls&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/lisheng-ls/Agent_Project.git",
-    "accountId": "7315528a-a12c-4a1f-8624-20e3bf892138"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lisheng-ls/Agent_Project.git&quot;,
+    &quot;accountId&quot;: &quot;7315528a-a12c-4a1f-8624-20e3bf892138&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -58,9 +81,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.1.executor": "Run",
     "Python.build_meta_knowledge.executor": "Run",
     "Python.ec_client_manager.executor": "Run",
     "Python.embedding_client_manager.executor": "Run",
+    "Python.graph.executor": "Debug",
+    "Python.llm.executor": "Run",
+    "Python.merge_retrieved_info.executor": "Debug",
+    "Python.prompt_loader.executor": "Run",
+    "Python.qdrant_client_manager.executor": "Run",
+    "Python.recall_column.executor": "Run",
+    "Python.recall_column_values.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -68,45 +99,21 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Agent_Project/docker",
+    "last_opened_file_path": "D:/Agent_Project",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "settings.editor.selected.configurable": "advanced.settings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Agent_Project" />
       <recent name="D:\Agent_Project\docker" />
       <recent name="D:\学习项目\Agent_Project\app\repositories\qdrant" />
       <recent name="D:\学习项目\Agent_Project\docker" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.embedding_client_manager">
-    <configuration name="build_meta_knowledge" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Agent_Project" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/scripts/build_meta_knowledge.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.graph">
     <configuration name="ec_client_manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Agent_Project" />
       <option name="ENV_FILES" value="" />
@@ -131,7 +138,55 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="embedding_client_manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="graph" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Agent_Project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/agent" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/agent/graph.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="merge_retrieved_info" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Agent_Project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/agent/nodes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/agent/nodes/merge_retrieved_info.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="qdrant_client_manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Agent_Project" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,9 +200,32 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/clients/embedding_client_manager.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/clients/qdrant_client_manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="recall_column_values" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Agent_Project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/agent/nodes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/agent/nodes/recall_column_values.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -158,9 +236,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.embedding_client_manager" />
+        <item itemvalue="Python.graph" />
+        <item itemvalue="Python.merge_retrieved_info" />
+        <item itemvalue="Python.recall_column_values" />
         <item itemvalue="Python.ec_client_manager" />
-        <item itemvalue="Python.build_meta_knowledge" />
+        <item itemvalue="Python.qdrant_client_manager" />
       </list>
     </recent_temporary>
   </component>

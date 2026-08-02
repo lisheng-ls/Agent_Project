@@ -10,7 +10,6 @@ from app.agent.state import DataAgentState
 
 
 async def add_extra_context(state: DataAgentState,runtime:Runtime[DataAgentContext]):
-    write = runtime.stream_writer
-    write('添加上下文')
+    write = runtime.stream_writer('添加上下文')
     import asyncio
     await asyncio.sleep(1)

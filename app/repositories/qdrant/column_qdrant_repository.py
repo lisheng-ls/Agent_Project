@@ -3,6 +3,7 @@ from qdrant_client.http.models import PointStruct
 from qdrant_client.models import Distance, VectorParams
 
 from app.conf.app_config import app_config
+from app.entities.column_info import ColumnInfo
 
 
 class ColumnQdrantRepository:
@@ -22,7 +23,7 @@ class ColumnQdrantRepository:
             )
 
 
-    #
+    #往qdrant中添加值
     async def upsert(self, column_embeddings:list[list[float]], ids:list[str] , payloads:list[dict],batch_size:int=20) -> None:
 
         #zip返回迭代器
@@ -46,3 +47,23 @@ class ColumnQdrantRepository:
                 wait=True,
                 points=batch_points
             )
+
+
+    async def search(self, embedding:list[float], score_threshold:float=0.6, limit:int = 10)->list[ColumnInfo]:
+        result = await self.client.query_points(
+            collection_name=self.collection_name,
+            query = embedding,
+            limit=3,
+            score_threshold = score_threshold
+        )
+
+        # print(f'result:{result}')
+        #
+        # print('*'*50)
+        #
+        # print(result.points)
+        #
+        #
+        # print(f'解包后的结果：{[ColumnInfo(**point.payload) for point in result.points]}')
+
+        return [ColumnInfo(**point.payload) for point in result.points]

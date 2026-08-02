@@ -17,7 +17,8 @@ services:
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_general_ci
 
-  elasticsearch:              #执行前需要执行这个命令 $env:DOCKER_BUILDKIT = 0
+#执行前需要执行这个命令 $env:DOCKER_BUILDKIT = 0
+  elasticsearch:
     build: ./elasticsearch
     container_name: elasticsearch
     restart: unless-stopped

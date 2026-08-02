@@ -12,3 +12,4 @@ async def validate_sql(state: DataAgentState,runtime: Runtime[DataAgentContext])
     write('校验sql')
     import asyncio
     await asyncio.sleep(1)
+    return {'error':None}

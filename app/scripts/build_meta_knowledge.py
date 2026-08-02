@@ -27,7 +27,7 @@ async def build(config_path:Path) -> None:
     qdrant_client = qdrant_client_manager.client
 
     #embedding客户端
-    embedding_client_manager.create_embedding_client()
+    embedding_client_manager.create_client()
     embedding_client = embedding_client_manager.client
 
     #es客户端

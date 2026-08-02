@@ -41,7 +41,7 @@ if __name__ == '__main__':
     """
     创建索引、插入数据、查询数据
     """
-    index_name = "student4"
+    index_name = "index_value"
 
     # 索引配置
     index_body = {
@@ -64,20 +64,28 @@ if __name__ == '__main__':
         # await client.indices.create(index=index_name,body=index_body)
         # print('索引添加成功')
         # #添加数据
-        doc = {
-            "stu_id": "S001",
-            "name": "张三",
-            "age": 18,
-            "score": 92.5,
-            "create_time": "2026-07-11 10:20:00"
-        }
-        resp = await client.index(index=index_name,document=doc)
-        print("单条插入结果：", resp)
+        # doc = {
+        #     "stu_id": "",
+        #     "name": "张三",
+        #     "age": 18,
+        #     "score": 92.5,
+        #     "create_time": "2026-07-11 10:20:00"
+        # }
+        # resp = await client.index(index=index_name,document=doc)
+        # print("单条插入结果：", resp)
 
         #查询数据
-        all_res =await client.search(index=index_name, query={"match_all": {}})
-        print(all_res)
+        all_res =await client.search(index=index_name, query= {
+            "match": {
+                "value": '华北'
+            }
+        })
+        all_results = all_res['hits']['hits']
+        print(all_results)
+        value =   [ result['_source'] for result in all_results]
 
+        print(value)
+        #print(value)
         # #删除索引
         # await client.indices.delete(index = ['student2','student','student1','student3','student4'])
         # print('索引删除成功')

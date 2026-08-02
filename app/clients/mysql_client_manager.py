@@ -64,6 +64,8 @@ if __name__ == '__main__':
     print('客户端初始化成功')
     async def test():
        async  with db_dw_client_manager.session_factory()  as session :
+
+
             sql = "select customer_id from dim_customer limit 10"
             #sql = "show columns from dim_customer"
             result = await session.execute(text(sql))

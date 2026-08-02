@@ -3,6 +3,7 @@ from qdrant_client.models import Distance, VectorParams
 from qdrant_client.models import PointStruct
 
 from app.conf.app_config import app_config
+from app.entities.metric_info import MetricInfo
 
 
 class MetricQdrantRepository:
@@ -34,5 +35,11 @@ class MetricQdrantRepository:
                 points=batch_points
             )
 
-
-
+    async def search(self, embedding:list[float],score_threshold:float = 0.6,limit:int=10) ->list[MetricInfo]:
+        result = await  self.client.query_points(
+            collection_name=self.collection_name,
+            query = embedding,
+            limit=limit,
+            score_threshold = score_threshold
+        )
+        return [MetricInfo(**point.payload) for point in result.points]

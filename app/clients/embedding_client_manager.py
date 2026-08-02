@@ -22,7 +22,7 @@ class EmbeddingClientManager:
         return f'http://{host}:{port}'
 
 
-    def create_embedding_client(self):
+    def create_client(self):
 
         self.client = OpenAIEmbeddings(
             model=self.embedding_config.model,
@@ -39,7 +39,7 @@ embedding_client_manager = EmbeddingClientManager(embedding_config)
 
 if __name__ == '__main__':
     #创建客户端
-    embedding_client_manager.create_embedding_client()
+    embedding_client_manager.create_client()
     client = embedding_client_manager.client
     """
     同步操作

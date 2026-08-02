@@ -44,3 +44,24 @@ class ValueEsRepository:
                 )
                 batch_operation.append(asdict(column_value_info))
             await self.es_client.bulk(operations=batch_operation)
+
+    async def search(self, keyword:str,score_threshold:float = 0.3 ,limit :int = 100):
+
+        query = {
+            "match": {
+                "value": keyword,
+            }
+        }
+
+        all_results = await self.es_client.search(
+            index=self.index_name,
+            query = query,
+            min_score = score_threshold,
+            size = limit)
+
+        all_results = all_results['hits']['hits']
+        all_results = [ result['_source'] for result in all_results]
+
+        #print( f"单词查询结果：{[ValueInfo(**result) for result in all_results]}")
+
+        return [ValueInfo(**result) for result in all_results]
