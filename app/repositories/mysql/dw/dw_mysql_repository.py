@@ -1,3 +1,5 @@
+from dataclasses import asdict
+
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
 
@@ -19,6 +21,25 @@ class DwMysqlRepository:
         results = await  self.session.execute(text(sql))
         results =  results.fetchall()
         return  [result[0] for result in results]
+
+    async def get_mysql_info(self):
+        sql = 'select version()'
+        version = await self.session.execute(text(sql))
+        version = version.scalar()
+
+        dialect = self.session.get_bind().dialect.name
+        return {'version':version,'dialect':dialect}
+
+    async def validate_sql(self, sql):
+            sql = f'explain {sql}'
+            await self.session.execute(text(sql))
+
+    async def run_sql(self, sql:str)->list[dict]:
+        results = await self.session.execute(text(sql))
+        results = results.mappings().fetchall()
+        return [dict(result) for result in results]
+
+
 
 
 
