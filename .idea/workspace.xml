@@ -1,44 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e281db8-106f-4d1a-9dbc-b5384523cd5c" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/app/agent/1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/agent/llm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/prompt/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/prompt/prompt_loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompts/correct_sql.prompt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompts/extend_keywords_for_column_recall.prompt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompts/extend_keywords_for_metric_recall.prompt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompts/extend_keywords_for_value_recall.prompt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompts/filter_metric_info.prompt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompts/filter_table_info.prompt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prompts/generate_sql.prompt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/agent/context.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/context.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/agent/graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/graph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/agent/nodes/add_extra_context.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/add_extra_context.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/agent/nodes/extact_keywords.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/extact_keywords.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/agent/nodes/merge_retrieved_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/merge_retrieved_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/agent/nodes/recall_column.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/recall_column.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/agent/nodes/recall_column_values.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/recall_column_values.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/agent/nodes/recall_metric.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/recall_metric.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/agent/nodes/validate_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/nodes/validate_sql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/agent/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/agent/state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/clients/ec_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/ec_client_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/clients/embedding_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/embedding_client_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/clients/mysql_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/mysql_client_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/clients/qdrant_client_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/clients/qdrant_client_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/entities/table_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/entities/table_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/es/value_es_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/es/value_es_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/table_info_mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/mappers/table_info_mapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/mysql/meta/meta_mysql_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/mysql/meta/meta_mysql_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/qdrant/column_qdrant_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/qdrant/column_qdrant_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/qdrant/metric_qdrant_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/qdrant/metric_qdrant_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/build_meta_knowledge.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/build_meta_knowledge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/app_config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/app_config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
-    </list>
+    <list default="true" id="7e281db8-106f-4d1a-9dbc-b5384523cd5c" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
