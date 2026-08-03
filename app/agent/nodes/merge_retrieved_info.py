@@ -48,11 +48,14 @@ async def merge_retrieved_info(state: DataAgentState,runtime: Runtime[DataAgentC
 
                 metric_relevant_column_to_column_info_mapping[relevant_column] = relevant_column_info
 
+    logger.info(f'metric_relevant_column_to_column_info_mapping的值为：{metric_relevant_column_to_column_info_mapping}')
+
+
     #1.2将字段取值加入到对应字段的examples中
     for  retrieved_column_value in retrieved_column_values:
 
         #获取字段di和字段的取值
-        column_id = retrieved_column_value.id
+        column_id = retrieved_column_value.column_id
         value = retrieved_column_value.value
 
         #根据column_id获取该字段对应的examples,并将value的值添加
@@ -60,6 +63,8 @@ async def merge_retrieved_info(state: DataAgentState,runtime: Runtime[DataAgentC
 
         if column_id not in metric_relevant_column_to_column_info_mapping:
             column_info = await meta_mysql_repository.get_column_info(column_id)
+
+            logger.info(f'column_info为：{column_info}')
 
             if column_info is None:
                 logger.warning(f"字段 {column_id} 不存在，跳过")
@@ -89,9 +94,10 @@ async def merge_retrieved_info(state: DataAgentState,runtime: Runtime[DataAgentC
 
         table_to_column_map[table_id].append(column_info)
 
+
     #防止主外键丢失，手动给每个表加上主外键
 
-    #根据table_id，从表中的获取所有主键和外键的字段信息
+    #根据table_id，从column_info表中的获取所有主键和外键的字段信息
 
     for table_id in table_to_column_map.keys():
 

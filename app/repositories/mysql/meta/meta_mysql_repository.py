@@ -53,7 +53,7 @@ class MetaMysqlRepository:
             return None
 
     async def get_key_info(self, table_id:str) -> list[ColumnInfo] :
-        sql = "select * from key_info where table_id = :table_id  and role in ( 'primary_key','foreign_key') "
+        sql = "select * from column_info where table_id = :table_id  and role in ( 'primary_key','foreign_key') "
         result = await self.session.execute(text(sql),params={'table_id': table_id})
         result = result.mappings().fetchall()
         return [ColumnInfo(**dict(row)) for row in result]
