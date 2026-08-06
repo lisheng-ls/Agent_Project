@@ -16,43 +16,54 @@ from app.core.log import logger
 
 async def generate_sql(state: DataAgentState,runtime: Runtime[DataAgentContext]):
     write = runtime.stream_writer
-    write('生成sql')
+    step = '生成sql'
 
-    #通过生成的table_infos,metric_infos,query, date_info,db_info,根据大模型生成sql
-    table_infos = state['table_infos']
-    metric_infos = state['metric_infos']
-    query = state['query']
-    date_info = state['date_info']
-    db_info = state['db_info']
-
-    #将table_infos,metric_infos, date_info,db_info转换为yaml格式，方便大模型使用
-    yaml_table_infos = yaml.dump(data=table_infos,encoding='utf-8',allow_unicode=True,default_flow_style=False,sort_keys=True)
-    yaml_metric_infos = yaml.dump(data=metric_infos,encoding='utf-8',allow_unicode=True,default_flow_style=False,sort_keys=True)
-    yaml_date_info = yaml.dump(data=date_info,encoding='utf-8',allow_unicode=True,default_flow_style=False,sort_keys=True)
-    yaml_db_info = yaml.dump(data=db_info,encoding='utf-8',allow_unicode=True,default_flow_style=False,sort_keys=True)
+    write({"type": "progress","step": step,"status": "running"})
 
 
-    #提示词
-    prompt_template = prompt_loader(name ='generate_sql' )
-    prompt = PromptTemplate(template=prompt_template,input_variables=['table_infos','metric_infos','query','date_info','db_info'])
 
-    #输出解释器
-    parser = StrOutputParser()
+    try:
+        #通过生成的table_infos,metric_infos,query, date_info,db_info,根据大模型生成sql
+        table_infos = state['table_infos']
+        metric_infos = state['metric_infos']
+        query = state['query']
+        date_info = state['date_info']
+        db_info = state['db_info']
 
-    #链路
-    chain = prompt | llm | parser
+        #将table_infos,metric_infos, date_info,db_info转换为yaml格式，方便大模型使用
+        yaml_table_infos = yaml.dump(data=table_infos,encoding='utf-8',allow_unicode=True,default_flow_style=False,sort_keys=True)
+        yaml_metric_infos = yaml.dump(data=metric_infos,encoding='utf-8',allow_unicode=True,default_flow_style=False,sort_keys=True)
+        yaml_date_info = yaml.dump(data=date_info,encoding='utf-8',allow_unicode=True,default_flow_style=False,sort_keys=True)
+        yaml_db_info = yaml.dump(data=db_info,encoding='utf-8',allow_unicode=True,default_flow_style=False,sort_keys=True)
 
-    #调用
-    result = await  chain.ainvoke(
-        input={
-            'table_infos':yaml_table_infos,
-            'metric_infos':yaml_metric_infos,
-            'query':query,
-            'date_info':yaml_date_info,
-            'db_info':yaml_db_info
-        })
 
-    logger.info(f'生成的sql为：{result}')
+        #提示词
+        prompt_template = prompt_loader(name ='generate_sql' )
+        prompt = PromptTemplate(template=prompt_template,input_variables=['table_infos','metric_infos','query','date_info','db_info'])
 
-    return {'sql':result}
+        #输出解释器
+        parser = StrOutputParser()
+
+        #链路
+        chain = prompt | llm | parser
+
+        #调用
+        result = await  chain.ainvoke(
+            input={
+                'table_infos':yaml_table_infos,
+                'metric_infos':yaml_metric_infos,
+                'query':query,
+                'date_info':yaml_date_info,
+                'db_info':yaml_db_info
+            })
+
+        logger.info(f'生成的sql为：{result}')
+        write({"type": "progress","step": step,"status": "success"})
+
+        return {'sql':result}
+
+    except Exception as e:
+        write({"type": "progress","step": step,"status": "error"})
+        logger.error(f'{step}执行失败：{e}')
+        raise
 

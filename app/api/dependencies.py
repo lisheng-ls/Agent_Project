@@ -42,14 +42,14 @@ async def get_meta_session():
 async def get_meta_mysql_repository(meta_session : AsyncSession = Depends(get_meta_session)):
     return MetaMysqlRepository(session=meta_session)
 
-#获取meta_session
+#获取dw_session
 async def get_dw_session():
     async with db_dw_client_manager.session_factory() as dw_session:
         yield dw_session
 
 #dw_mysql_repository
-async def get_dw_mysql_repository(meta_session : AsyncSession = Depends(get_meta_session)):
-    return DwMysqlRepository(session=meta_session)
+async def get_dw_mysql_repository(dw_session : AsyncSession = Depends(get_dw_session)):
+    return DwMysqlRepository(session=dw_session)
 
 
 async def get_query_service(

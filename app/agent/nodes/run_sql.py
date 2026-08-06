@@ -10,15 +10,25 @@ from app.core.log import logger
 
 async def run_sql(state: DataAgentState,runtime: Runtime[DataAgentContext]):
     write = runtime.stream_writer
-    write('召回指标信息')
+    step = '执行sql'
 
-    #根据生成的sql执行sql语句
-    sql = state['sql']
-    dw_mysql_repository  = runtime.context['dw_mysql_repository']
+    write({"type": "progress","step": step,"status": "success"})
 
-    result = await dw_mysql_repository.run_sql(sql)
+    try:
+        #根据生成的sql执行sql语句
+        sql = state['sql']
+        dw_mysql_repository  = runtime.context['dw_mysql_repository']
 
-    logger.info(f'sql执行结果为：{result}')
+        result = await dw_mysql_repository.run_sql(sql)
 
-    return {'sql_search_result':result}
+        logger.info(f'sql执行结果为：{result}')
 
+
+        write({"type": "progress","step": step,"status": "success"})
+
+        write({"type": "result","data": result})
+
+    except Exception as e:
+        write({"type": "progress","step": step,"status": "error"})
+        logger.error(f'{step}执行失败：{e}')
+        raise

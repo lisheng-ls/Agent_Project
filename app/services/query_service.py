@@ -1,3 +1,5 @@
+import json
+
 from langchain_openai import OpenAIEmbeddings
 
 from app.agent.context import DataAgentContext
@@ -39,6 +41,10 @@ class QueryService:
             meta_mysql_repository=self.meta_mysql_repository,
             dw_mysql_repository=self.dw_mysql_repository
         )
-
-        async  for chunk in graph.astream(input=state, context=context, stream_mode='custom'):
-            yield chunk
+        try:
+            async  for chunk in graph.astream(input=state, context=context, stream_mode='custom'):
+                yield f"data:{json.dumps(chunk,ensure_ascii = False,default = str)}\n\n"
+        except Exception as e:
+            error = {"type": "error","message": str(e)}
+            error = json.dumps(error,ensure_ascii = False,default = str)
+            yield f"data:{error}\n\n"
