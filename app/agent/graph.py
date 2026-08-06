@@ -96,7 +96,7 @@ if __name__ == '__main__':
                 error = None
             )
 
-                    #qdrant客户端
+            #qdrant客户端
             qdrant_client_manager.create_client()
             qdrant_client = qdrant_client_manager.client
 
