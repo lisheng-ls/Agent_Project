@@ -5,5 +5,5 @@ from app.api.routers.query_router import query_router
 
 app = FastAPI(lifespan=lifespan)
 
-app.include_router(query_router, prefix="/query")
+app.include_router(query_router, prefix="/api")
 

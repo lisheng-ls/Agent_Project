@@ -14,49 +14,54 @@ from app.core.log import logger
 
 async def filter_metric(state: DataAgentState,runtime: Runtime[DataAgentContext]):
     write = runtime.stream_writer
-    write('过滤指标信息')
+    step = '过滤指标信息'
+    write({"type": "progress","step": step,"status": "running"})
+
+    try:
+        #1.通过大模型过滤指标信息
+        metric_infos = state['metric_infos']
+        query = state['query']
+
+        #将指标信息转化为yaml格式数据方便大模型解析
+
+        metric_infos_yaml = yaml.dump(
+            data=metric_infos,
+            encoding='utf-8',
+            allow_unicode=True,
+            default_flow_style=False,
+            sort_keys = True
+        )
 
 
-    #1.通过大模型过滤指标信息
-    metric_infos = state['metric_infos']
-    query = state['query']
+        #提示词
+        prompt_template = prompt_loader(name = 'filter_metric_info')
+        prompt = PromptTemplate(template=prompt_template,input_variables=['query','metric_infos'])
 
-    #将指标信息转化为yaml格式数据方便大模型解析
+        #输出解释器
+        parser = JsonOutputParser()
 
-    metric_infos_yaml = yaml.dump(
-        data=metric_infos,
-        encoding='utf-8',
-        allow_unicode=True,
-        default_flow_style=False,
-        sort_keys = True
-    )
+        #链路
+        chain = prompt | llm | parser
 
+        #调用
+        result  =  await  chain.ainvoke(input={'query': query, 'metric_infos': metric_infos_yaml})
 
-    #提示词
-    prompt_template = prompt_loader(name = 'filter_metric_info')
-    prompt = PromptTemplate(template=prompt_template,input_variables=['query','metric_infos'])
+        logger.info(f'大模型过滤后的指标信息：{result}')
 
-    #输出解释器
-    parser = JsonOutputParser()
-
-    #链路
-    chain = prompt | llm | parser
-
-    #调用
-    result  =  await  chain.ainvoke(input={'query': query, 'metric_infos': metric_infos_yaml})
-
-    logger.info(f'大模型过滤后的指标信息：{result}')
-
-    #2.根据大模型生成的结果，处理metric_infos
-    filter_metric_infos = [metric_info for metric_info in metric_infos if metric_info['name'] in result]
+        #2.根据大模型生成的结果，处理metric_infos
+        filter_metric_infos = [metric_info for metric_info in metric_infos if metric_info['name'] in result]
 
 
-    #处理后的指标信息
-    logger.info(f'处理后的指标信息:{filter_metric_infos}')
+        #处理后的指标信息
+        logger.info(f'处理后的指标信息:{filter_metric_infos}')
+        write({"type": "progress","step": step,"status": "success"})
 
-    return {'metric_infos': filter_metric_infos}
+        return {'metric_infos': filter_metric_infos}
 
-
+    except Exception as e:
+        write({"type": "progress","step": step,"status": "error"})
+        logger.error(f'{step}执行失败：{e}')
+        raise
 
 
 
